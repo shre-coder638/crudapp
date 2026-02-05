@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">Update Employee Data</h1>
+
+    <form action="/update/{{ Employee.id }}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="name"
+                   name="name"
+                   value="{{ Employee.name }}"
+                   placeholder="Enter Full Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   name="email"
+                   value="{{ Employee.email }}"
+                   placeholder="Enter Email">
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
